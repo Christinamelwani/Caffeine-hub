@@ -1,7 +1,10 @@
-export default function TableItem({ item, deleteDrink }) {
+export default function TableItem({ item, deleteDrink, showUpdateForm }) {
   const handleDelete = (e) => {
     const id = e.target.name;
     deleteDrink(id);
+  };
+  const handleUpdate = (id) => {
+    showUpdateForm(id);
   };
   return (
     <tr className="border-b odd:bg-white even:bg-purple-50 odd:dark:bg-purple-800 even:dark:bg-purple-700">
@@ -14,7 +17,10 @@ export default function TableItem({ item, deleteDrink }) {
         <img src={item.imgUrl} className="h-[100px] w-[100px]" alt="" />
       </td>
       <td className="px-6 py-4 gap-3 flex">
-        <button className="bg-yellow-500 text-white rounded px-4 py-2">
+        <button
+          onClick={() => handleUpdate(item.id)}
+          className="bg-yellow-500 text-white rounded px-4 py-2"
+        >
           Edit
         </button>
         <button

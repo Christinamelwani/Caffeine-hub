@@ -1,40 +1,32 @@
 {
   "drinks": [
     {
-      "id": 1,
-      "name": "Caffè latte",
-      "description": "Kopi espresso yang diberi susu.",
-      "price": 30000,
-      "imgUrl": "https://coffeeatthree.com/wp-content/uploads/latte-1-500x375.jpg",
+      "name": "Hmmb",
+      "price": "",
+      "categoryId": "3",
+      "description": "",
+      "imgUrl": "",
       "authorId": 1,
-      "categoryId": 1
+      "id": 1
     },
     {
-      "id": 2,
-      "name": "Espresso",
-      "description": "Kopi pekat yang diseduh dengan mengunakan tekanan tinggi.",
-      "price": 10000,
-      "imgUrl": "https://coffeeatthree.com/wp-content/uploads/crema-1.jpg",
+      "name": "Hmm 3",
+      "price": "2000",
+      "categoryId": 1,
+      "description": "",
+      "imgUrl": "",
       "authorId": 1,
-      "categoryId": 1
-    },
-    {
       "id": 3,
-      "name": "Cappuccino",
-      "description": "Minuman khas Italia yang terdiri dari 1/3 espresso, 1/3 susu steamed, dan 1/3 buih susu.",
-      "price": 35000,
-      "imgUrl": "https://coffeeatthree.com/wp-content/uploads/cappuccino-1a.jpg",
-      "authorId": 1,
-      "categoryId": 1
+      "category": "2"
     },
     {
-      "name": "Caramel frapuccino",
-      "price": "20000",
-      "categoryId": 0,
-      "description": "disgusting",
-      "imgUrl": "https://burpple.imgix.net/foods/241d9213abd9ee5b64200352_original.?w=645&dpr=1&fit=crop&q=80&auto=format",
+      "name": "",
+      "price": "",
+      "categoryId": "2",
+      "description": "",
+      "imgUrl": "",
       "authorId": 1,
-      "id": 5
+      "id": 4
     }
   ],
   "category": [
