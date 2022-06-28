@@ -23,7 +23,7 @@ Target:
 - [x] Lifecycle component menggunakan useEffect
 - [x] Membuat server (json-server)
 - [x] Membuat react app untuk client-user (Styling)
-- [ ] Membuat react app untuk client-admin (CRUD)
+- [x] Membuat react app untuk client-admin (CRUD)
 - [x] Menentukan Tema Aplikasi
 - [x] Menentukan Design dan pemilihan CSS Framework
 
@@ -39,8 +39,8 @@ Target:
 
 - [x] Lecture - Custom Hooks
 - [x] Rules of Hooks
-- [ ] Lecture - React-Router
-- [ ] Membuat router user-side (min: home, detail)
+- [x] Lecture - React-Router
+- [x] Membuat router user-side (min: home, detail)
 - [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
 - [ ] Membuat privateRoute untuk admin
 

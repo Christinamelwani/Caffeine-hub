@@ -2,20 +2,29 @@ import "./App.css";
 import Navigation from "./components/navbar";
 import Menu from "./views/menu";
 import Splash from "./views/splash";
+import Detail from "./views/detail";
 
-import React, { useState } from "react";
+import { Route, Routes } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+import React from "react";
+
 function App() {
-  const [showMenu, setShowMenu] = useState(false);
-  const showMenuOnClick = () => setShowMenu(true);
+  let navigate = useNavigate();
+
   return (
     <div>
       <header className="sticky top-0 z-50">
-        <Navigation setShowMenu={setShowMenu} />
+        <Navigation />
       </header>
       <div className="relative">
-        {showMenu ? <Menu /> : <Splash showMenuOnClick={showMenuOnClick} />}
+        <Routes>
+          <Route path="/" element={<Splash navigate={navigate} />}></Route>
+          <Route path="/drinks" element={<Menu navigate={navigate} />}></Route>
+          <Route path="/drinks/:id" element={<Detail />}></Route>
+        </Routes>
       </div>
-      <footer></footer>
+      <footer className="sticky bottom-0 z-50"></footer>
     </div>
   );
 }
