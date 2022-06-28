@@ -26,11 +26,33 @@
       "imgUrl": "https://coffeeatthree.com/wp-content/uploads/cappuccino-1a.jpg",
       "authorId": 1,
       "categoryId": 1
+    },
+    {
+      "name": "Caramel frapuccino",
+      "price": "20000",
+      "categoryId": 0,
+      "description": "disgusting",
+      "imgUrl": "https://burpple.imgix.net/foods/241d9213abd9ee5b64200352_original.?w=645&dpr=1&fit=crop&q=80&auto=format",
+      "authorId": 1,
+      "id": 5
     }
   ],
-  "category": [{ "id": 1, "name": "espresso-based" }],
+  "category": [
+    {
+      "id": 1,
+      "name": "espresso-based"
+    }
+  ],
   "ingredients": [
-    { "id": 1, "itemId": 1, "name": "espresso" },
-    { "id": 2, "itemId": 1, "name": "milk" }
+    {
+      "id": 1,
+      "itemId": 1,
+      "name": "espresso"
+    },
+    {
+      "id": 2,
+      "itemId": 1,
+      "name": "milk"
+    }
   ]
 }
