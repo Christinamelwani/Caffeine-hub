@@ -31,15 +31,14 @@ Target:
 
 > Hari ini saya belajar tentang React Component, hooks, props dan lifecycle. Saya belum begitu paham dengan cara kerja React, tetapi itu wajar karena ini hari pertama. Lifecycle yang saya sudah coba baru useEffect yang mirip watcher itu. Untuk sisi client, saya sudah membuat layout sederhana, tampilan semua data, dan tampilan detail. Untuk sisi admin, saya baru membuat layout sederhana (belum ada fitur CRUD).
 
-> Saya memilih tema Restaurant, lebih tepatnya cafe, dengan referensi website Tanamera dan Starbucks. Saya akan menggunakan framework Tailwind CSS.
-> ...
+> Saya memilih tema Restaurant, lebih tepatnya cafe, dengan referensi website Tanamera dan Starbucks. Saya akan menggunakan framework Tailwind CSS
 
 ## W1D2
 
 Target:
 
-- [ ] Lecture - Custom Hooks
-- [ ] Rules of Hooks
+- [x] Lecture - Custom Hooks
+- [x] Rules of Hooks
 - [ ] Lecture - React-Router
 - [ ] Membuat router user-side (min: home, detail)
 - [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
@@ -47,7 +46,7 @@ Target:
 
 **Report:**
 
-...
+> Hari ini saya mencoba menerapkan fitur CRUD di admin panel. Create, Read dan Delete sudah berhasil untuk entitas 'drinks' di panel admin. Saya belum mecoba custom hooks atau routing.
 
 ## W1D3
 
