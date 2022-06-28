@@ -1,22 +1,37 @@
-export default function DrinksForm({
-  newDrink,
-  setNewDrink,
-  submitNewDrink,
-  setDisplayAddForm,
-}) {
+import { useEffect, useState } from "react";
+
+export default function ReusableForm({ action, drink, setDrink, actionName }) {
+  const [categories, setCategories] = useState([]);
+
+  useEffect(() => {
+    async function getData() {
+      try {
+        const response = await fetch("http://localhost:3000/category");
+        if (!response.ok) {
+          throw { name: "error" };
+        }
+        const fetched = await response.json();
+        setCategories(fetched);
+      } catch (err) {
+        console.log(err);
+      }
+    }
+    getData();
+    console.log(categories);
+  }, []);
+
   const handleChange = (e) => {
     const name = e.target.name;
     const value = e.target.value;
-    setNewDrink({
-      ...newDrink,
+    setDrink({
+      ...drink,
       [name]: value,
     });
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    submitNewDrink(newDrink);
-    setDisplayAddForm(false);
+    action(drink);
   };
   return (
     <form className="pt-6 flex flex-col w-full gap-5" onSubmit={handleSubmit}>
@@ -29,7 +44,7 @@ export default function DrinksForm({
             type="text"
             name="name"
             onChange={handleChange}
-            value={newDrink.name}
+            value={drink.name}
             className="px-4 py-1 display-none border-blue-200 rounded border"
           />
         </div>
@@ -37,16 +52,20 @@ export default function DrinksForm({
           <label className="bold" htmlFor="Category">
             Category:
           </label>
+
           <select
             className="px-10 rounded text-lg py-1 display-none border-blue-200  border"
-            value={newDrink.categoryId}
+            value={drink.categoryId}
             onChange={handleChange}
-            name="category"
+            name="categoryId"
             id=""
           >
-            <option value="1">Espresso-based</option>
-            <option value="2">Tea-based</option>
-            <option value="3">Flavored milk</option>
+            {/* {categories.map((el) => {
+              <option value={el.id}>{el.name}</option>;
+            })} */}
+            <option value="1">Espresso-based</option>;
+            <option value="2">Tea-based</option>;
+            <option value="3">Milk-based</option>;
           </select>
         </div>
       </div>
@@ -57,7 +76,7 @@ export default function DrinksForm({
           </label>
           <input
             name="price"
-            value={newDrink.price}
+            value={drink.price}
             onChange={handleChange}
             type="number"
             className="px-4 py-1 display-none border-blue-200 rounded border"
@@ -70,7 +89,7 @@ export default function DrinksForm({
           <input
             onChange={handleChange}
             name="imgUrl"
-            value={newDrink.imgUrl}
+            value={drink.imgUrl}
             type="text"
             className="px-4 py-1 display-none border-blue-200 rounded border"
           />
@@ -83,7 +102,7 @@ export default function DrinksForm({
           </label>
           <textarea
             name="description"
-            value={newDrink.description}
+            value={drink.description}
             onChange={handleChange}
             type="number"
             className="px-4 py-1 display-none border-blue-200 rounded border"
@@ -93,7 +112,7 @@ export default function DrinksForm({
       <input
         className="cursor-pointer self-end mr-8 mt-2 bg-blue-500 text-white px-4 rounded py-2"
         type="submit"
-        value="Add drink"
+        value={actionName}
         id=""
       />
     </form>

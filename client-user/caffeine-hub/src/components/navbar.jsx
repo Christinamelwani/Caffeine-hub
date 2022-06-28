@@ -1,11 +1,12 @@
-export default function Navigation({ setShowMenu }) {
+import { Link } from "react-router-dom";
+
+export default function Navigation({}) {
   return (
-    <nav className="bg-white py-3 flex justify-between px-2 sm:px-4 py-2.5 ">
-      <div
-        className=" cursor-pointer flex items-center"
-        onClick={() => setShowMenu(false)}
-      >
-        <h1 className="text-xl text-bold text-yellow-900">Caffeine hub</h1>
+    <nav className="bg-white py-3 flex justify-between px-2 sm:px-4 py-4 ">
+      <div className=" cursor-pointer flex items-center">
+        <Link to="/">
+          <h1 className="text-xl text-bold text-yellow-900">Caffeine hub</h1>
+        </Link>
       </div>
       <div className="flex gap-5">
         <div className="flex">

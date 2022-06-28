@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Table from "../components/table";
-export default function Dashboard({ Navigation }) {
+export default function Categories({ Navigation }) {
   const [drinks, setDrinks] = useState([]);
   const [justDeleted, setJustDeleted] = useState(false);
   const getData = () => {
@@ -44,7 +44,7 @@ export default function Dashboard({ Navigation }) {
   return (
     <div className="ml-4 pt-4 flex h-full flex-col grow">
       <div className="flex flex-row justify-between w-[80vw]">
-        <h1 className="text-xl font-bold">Drinks list</h1>
+        <h1 className="text-xl font-bold">Categories list</h1>
         <Link to="/add">
           <button className="self-start mr-4 bg-blue-600 py-2 px-4 rounded text-white">
             Add drink

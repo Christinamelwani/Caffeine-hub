@@ -23,7 +23,7 @@ Target:
 - [x] Lifecycle component menggunakan useEffect
 - [x] Membuat server (json-server)
 - [x] Membuat react app untuk client-user (Styling)
-- [ ] Membuat react app untuk client-admin (CRUD)
+- [x] Membuat react app untuk client-admin (CRUD)
 - [x] Menentukan Tema Aplikasi
 - [x] Menentukan Design dan pemilihan CSS Framework
 
@@ -39,14 +39,14 @@ Target:
 
 - [x] Lecture - Custom Hooks
 - [x] Rules of Hooks
-- [ ] Lecture - React-Router
-- [ ] Membuat router user-side (min: home, detail)
-- [ ] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
-- [ ] Membuat privateRoute untuk admin
+- [x] Lecture - React-Router
+- [x] Membuat router user-side (min: home, detail)
+- [x] Membuat router admin-side (min: login, add admin, CRUD main entitas, CRUD another entitas)
+- [x] Membuat privateRoute untuk admin
 
 **Report:**
 
-> Hari ini saya mencoba menerapkan fitur CRUD di admin panel. Create, Read dan Delete sudah berhasil untuk entitas 'drinks' di panel admin. Saya belum mecoba custom hooks atau routing.
+> Hari ini, saya berhasil membuat fitur CRUD di admin panel untuk entitas utama (drinks) dan protected routes untuk admin. Selain itu, saya sudah refactor semua kode di admin dan user client untuk menggunakan routes. Saya masih belum menerapkan select option di input form dan juga belum menerapkan fitur CRUD another entitas. Saya sudah mencoba nested routes, tapi akhirnya memutuskan untuk tidak menggunakan itu di challenge ini. Saya belum mencoba custom hooks.
 
 ## W1D3
 
