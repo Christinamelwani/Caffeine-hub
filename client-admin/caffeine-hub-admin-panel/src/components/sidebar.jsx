@@ -11,9 +11,11 @@ export default function Sidebar() {
             Dashboard
           </div>
         </Link>
-        <div className="py-2  text-lg hover:bg-neutral-800 cursor-pointer">
-          Categories
-        </div>
+        <Link to="/categories">
+          <div className="py-2  text-lg hover:bg-neutral-800 cursor-pointer">
+            Categories
+          </div>
+        </Link>
         <div className="py-2  text-lg hover:bg-neutral-800 cursor-pointer">
           Register Admin
         </div>
