@@ -2,20 +2,20 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Table from "../components/table";
 export default function Categories({ Navigation }) {
-  const [drinks, setDrinks] = useState([]);
+  const [categories, setCategories] = useState([]);
   const [justDeleted, setJustDeleted] = useState(false);
   const getData = () => {
-    async function getDrinks() {
+    async function getCategories() {
       try {
-        const results = await fetch("http://localhost:3000/drinks");
-        const fetchedDrinks = await results.json();
-        setDrinks(fetchedDrinks);
+        const results = await fetch("http://localhost:3000/categories");
+        const fetchedCategories = await results.json();
+        setCategories(fetchedCategories);
         setJustDeleted(false);
       } catch (err) {
         console.log(err);
       }
     }
-    getDrinks();
+    getCategories();
   };
 
   useEffect(getData, [justDeleted]);
@@ -45,14 +45,15 @@ export default function Categories({ Navigation }) {
     <div className="ml-4 pt-4 flex h-full flex-col grow">
       <div className="flex flex-row justify-between w-[80vw]">
         <h1 className="text-xl font-bold">Categories list</h1>
-        <Link to="/add">
+        <Link to="/categories/add">
           <button className="self-start mr-4 bg-blue-600 py-2 px-4 rounded text-white">
-            Add drink
+            Add Category
           </button>
         </Link>
       </div>
       <Table
-        items={drinks}
+        type="categories"
+        items={categories}
         deleteDrink={deleteDrink}
         showUpdateForm={showUpdateForm}
       />

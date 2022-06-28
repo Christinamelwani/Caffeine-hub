@@ -1,15 +1,6 @@
 {
   "drinks": [
     {
-      "name": "Hmmb",
-      "price": "",
-      "categoryId": "3",
-      "description": "",
-      "imgUrl": "",
-      "authorId": 1,
-      "id": 1
-    },
-    {
       "name": "Hmm 3",
       "price": "2000",
       "categoryId": 1,
@@ -18,15 +9,6 @@
       "authorId": 1,
       "id": 3,
       "category": "2"
-    },
-    {
-      "name": "",
-      "price": "",
-      "categoryId": "2",
-      "description": "",
-      "imgUrl": "",
-      "authorId": 1,
-      "id": 4
     }
   ],
   "categories": [

@@ -57,6 +57,14 @@ function App() {
               </ProtectedRoute>
             }
           ></Route>
+          <Route
+            path="/categories/add"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <Add Navigation={Navigation} />
+              </ProtectedRoute>
+            }
+          ></Route>
           <Route path="*" element={<p>There's nothing here: 404!</p>} />
         </Routes>
       </div>
