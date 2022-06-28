@@ -1,6 +1,8 @@
 import TableItem from "./tableItems";
-export default function Table({ items }) {
-  const listItems = items.map((el) => <TableItem item={el} key={el.id} />);
+export default function Table({ items, deleteDrink }) {
+  const listItems = items.map((el) => (
+    <TableItem item={el} key={el.id} deleteDrink={deleteDrink} />
+  ));
   return (
     <div className="relative mr-2 mt-2 overflow-x-auto shadow-md sm:rounded-lg">
       <table className="w-full text-sm text-left text-white">
