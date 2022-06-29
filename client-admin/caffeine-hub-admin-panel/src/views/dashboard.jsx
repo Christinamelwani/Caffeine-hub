@@ -52,6 +52,7 @@ export default function Dashboard({ Navigation }) {
         </Link>
       </div>
       <Table
+        type="drinks"
         items={drinks}
         deleteDrink={deleteDrink}
         showUpdateForm={showUpdateForm}
