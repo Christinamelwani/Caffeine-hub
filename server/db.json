@@ -1,14 +1,49 @@
 {
   "drinks": [
     {
-      "name": "Hmm 3",
-      "price": "2000",
-      "categoryId": 1,
-      "description": "",
-      "imgUrl": "",
+      "name": "Americano",
+      "price": "18000",
+      "categoryId": "",
+      "description": "Espresso dan air mineral",
+      "imgUrl": "https://coffeeatthree.com/wp-content/uploads/americano-3.jpg",
       "authorId": 1,
-      "id": 3,
-      "category": "2"
+      "id": 1
+    },
+    {
+      "name": "Frapuccino",
+      "price": "30000",
+      "categoryId": "",
+      "description": "Kopi dan cream manis",
+      "imgUrl": "https://coffeeatthree.com/wp-content/uploads/frappuccino-recipes-1.jpg",
+      "authorId": 1,
+      "id": 2
+    },
+    {
+      "name": "Es kopi susu",
+      "price": "20000",
+      "categoryId": "",
+      "description": "Es kopi susu classic",
+      "imgUrl": "https://coffeeatthree.com/wp-content/uploads/iced-coffee-6.jpg",
+      "authorId": 1,
+      "id": 3
+    },
+    {
+      "name": "Capuccino",
+      "price": "25000",
+      "categoryId": "",
+      "description": "Susu dan Kopi nan enak",
+      "imgUrl": "https://coffeeatthree.com/wp-content/uploads/cappuccino-1a.jpg",
+      "authorId": 1,
+      "id": 4
+    },
+    {
+      "name": "Cold brew with Vanilla Cream",
+      "price": "20000",
+      "categoryId": "",
+      "description": "Kopi yang diseduh di lemari es dipaduhkan dengan saus vanilla manis",
+      "imgUrl": "https://coffeeatthree.com/wp-content/uploads/0420-cold-brew-coffee-010.jpg",
+      "authorId": 1,
+      "id": 5
     }
   ],
   "categories": [

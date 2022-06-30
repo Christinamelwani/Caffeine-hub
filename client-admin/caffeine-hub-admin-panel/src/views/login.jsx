@@ -1,6 +1,9 @@
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { IS_LOGGED_IN_SET_TRUE } from "../actions/actionTypes";
 
 export default function Login({ Navigation, setIsLoggedIn }) {
+  const dispatch = useDispatch();
   const [user, setUser] = useState({ username: "", password: "" });
   function handleChange(e) {
     const name = e.target.name;
@@ -10,9 +13,8 @@ export default function Login({ Navigation, setIsLoggedIn }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    console.log(user.password, user.username);
     if (user.password === "test" && user.username === "test") {
-      setIsLoggedIn(true);
+      dispatch({ type: IS_LOGGED_IN_SET_TRUE });
       Navigation("/");
     }
   }

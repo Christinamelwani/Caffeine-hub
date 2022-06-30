@@ -1,0 +1,152 @@
+[33mcommit 1e110bd618e62fbd6b4e38a3ed878962f544aa20[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32m04-redux[m[33m)[m
+Merge: 3f50975 595a28e
+Author: Christinamelwani <90821809+Christinamelwani@users.noreply.github.com>
+Date:   Wed Jun 29 11:34:26 2022 +0700
+
+    Merge pull request #5 from Christinamelwani/03-router
+    
+    03 router
+
+[33mcommit 595a28ebbec9b32d0a71f3f5c90d7198fb4598b8[m[33m ([m[1;31morigin/03-router[m[33m, [m[1;32m03-router[m[33m)[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Wed Jun 29 11:33:39 2022 +0700
+
+    Final commit on this branch
+
+[33mcommit e53e836437105d5a81785d3ab12b9ce63e363ecd[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Wed Jun 29 01:00:05 2022 +0700
+
+    Berhasil tampilkan categories dan membuat table dan tabel Items reusable
+
+[33mcommit 3f509758e39c026d0568797c1bc0bf0ab9d2ae99[m
+Merge: fa8e053 d6f9aca
+Author: Christinamelwani <90821809+Christinamelwani@users.noreply.github.com>
+Date:   Tue Jun 28 23:46:32 2022 +0700
+
+    Merge pull request #4 from Christinamelwani/03-router
+    
+    03 router
+
+[33mcommit d6f9acad1e5cc5a971071379531a4e175b566578[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Tue Jun 28 23:44:35 2022 +0700
+
+    Update progress
+
+[33mcommit eb7d8236faf184f7380d67f25f267af785d2883c[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Tue Jun 28 23:39:23 2022 +0700
+
+    Membuat protected routes login, entitas utama, dan entitas lain
+
+[33mcommit 70cc54c5b70d64aca54a71aa108a4f252005be35[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Tue Jun 28 22:17:51 2022 +0700
+
+    Menambahkan routes dan fungsionalitas CRUD di admin-client
+
+[33mcommit 7d588f4615c7400a1f6b95599d7727abc9d88b9c[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Tue Jun 28 18:55:50 2022 +0700
+
+    Menerapkan routing di client
+
+[33mcommit fa8e0535429fae46bca4f5723c9f75040217933a[m
+Merge: 62a79a8 0577a88
+Author: Christinamelwani <90821809+Christinamelwani@users.noreply.github.com>
+Date:   Tue Jun 28 12:40:40 2022 +0700
+
+    Merge pull request #3 from Christinamelwani/01-react-intro
+    
+    01 react intro
+
+[33mcommit 0577a885c243b585368b1ee4b4a0992a6fd14bef[m[33m ([m[1;31morigin/01-react-intro[m[33m, [m[1;32m01-react-intro[m[33m)[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Tue Jun 28 12:39:24 2022 +0700
+
+    Update progress
+
+[33mcommit fb82a4ae709eb047c2636793fe2272193585f5e7[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Tue Jun 28 12:35:01 2022 +0700
+
+    Menambahkan fitur Create dan Delete drinks pada admin panel
+
+[33mcommit 62a79a83261c684bc3071f3a14726726d55df023[m
+Merge: e9812d7 d1ebcee
+Author: Christinamelwani <90821809+Christinamelwani@users.noreply.github.com>
+Date:   Tue Jun 28 01:02:52 2022 +0700
+
+    Merge pull request #2 from Christinamelwani/01-react-intro
+    
+    Berhasil tamplikan data di tabel admin
+
+[33mcommit d1ebceefea022cc0061c7983e046593c9efec823[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Tue Jun 28 00:37:31 2022 +0700
+
+    Berhasil tamplikan data di tabel admin
+
+[33mcommit e9812d794f79c5f597b82022a6ad27c57d08f2da[m
+Merge: 02f4544 ee8baf3
+Author: Christinamelwani <90821809+Christinamelwani@users.noreply.github.com>
+Date:   Mon Jun 27 23:13:24 2022 +0700
+
+    Merge pull request #1 from Christinamelwani/01-react-intro
+    
+    01 react intro
+
+[33mcommit ee8baf3b686cdc1f6c3d985a46eafcad80b0a88c[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Mon Jun 27 23:10:44 2022 +0700
+
+    Lapor progress
+
+[33mcommit 76a43d5c557dd02c8eacc2c0470a402af5809bd2[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Mon Jun 27 23:05:08 2022 +0700
+
+    Created Basic admin layout
+
+[33mcommit a9c743c8f2320f569678b79db4ae032ba2415cdd[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Mon Jun 27 21:55:09 2022 +0700
+
+    Menambahkan referensi desain
+
+[33mcommit 3fcbc0188c66f29a34fc4da22b75e456f485fbc7[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Mon Jun 27 21:45:36 2022 +0700
+
+    Update progress
+
+[33mcommit 9bdefd5f70d09834e9976a12b69c422e6fed80bb[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Mon Jun 27 21:43:39 2022 +0700
+
+    Berhasil membuat aplikasi, menampilkan data, dan menampilkan detail di client, serta melakukan styling sederhana
+
+[33mcommit 8f835fd6735ebf2ced16cd3e28feb8dc0313ff13[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Mon Jun 27 15:58:36 2022 +0700
+
+    Fake server done
+
+[33mcommit 02f4544505e3076cfad457c15d604a13abc81fe9[m
+Author: Christinamelwani <christinarajm@gmail.com>
+Date:   Mon Jun 27 15:13:55 2022 +0700
+
+    Menuliskan tema dan progress sejauh ini
+
+[33mcommit 186b87aa91a372d93e160767549e7f988b3483c6[m
+Author: Hary Dhimas <dhimas.hary@gmail.com>
+Date:   Mon Jun 27 09:22:08 2022 +0700
+
+    Update README.md
+
+[33mcommit 518acb08e464f2c6a59d1d366467600a490078f8[m
+Author: Hary Dhimas <dhimas.hary@gmail.com>
+Date:   Mon Jun 27 09:21:57 2022 +0700
+
+    Initial commit

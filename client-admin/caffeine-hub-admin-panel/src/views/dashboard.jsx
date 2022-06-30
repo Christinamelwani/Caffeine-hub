@@ -1,21 +1,14 @@
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { fetchDrinks } from "../actions";
 import Table from "../components/table";
 export default function Dashboard({ Navigation }) {
-  const [drinks, setDrinks] = useState([]);
+  const dispatch = useDispatch();
+  const drinks = useSelector((state) => state.drinks);
   const [justDeleted, setJustDeleted] = useState(false);
   const getData = () => {
-    async function getDrinks() {
-      try {
-        const results = await fetch("http://localhost:3000/drinks");
-        const fetchedDrinks = await results.json();
-        setDrinks(fetchedDrinks);
-        setJustDeleted(false);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getDrinks();
+    dispatch(fetchDrinks());
   };
 
   useEffect(getData, [justDeleted]);

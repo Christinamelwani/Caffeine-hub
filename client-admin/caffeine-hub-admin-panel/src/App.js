@@ -7,12 +7,12 @@ import Login from "./views/login";
 import Categories from "./views/categories";
 import ProtectedRoute from "./views/protected";
 
-import { useState } from "react";
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 function App() {
   const Navigation = useNavigate();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
   return (
     <div className="App flex flex-row">
       <Sidebar />
@@ -20,9 +20,7 @@ function App() {
         <Routes>
           <Route
             path="/login"
-            element={
-              <Login Navigation={Navigation} setIsLoggedIn={setIsLoggedIn} />
-            }
+            element={<Login Navigation={Navigation} />}
           ></Route>
 
           <Route
