@@ -1,39 +1,25 @@
 import ReusableForm from "../components/form";
 import { useState } from "react";
-
-export default function AddDrink({ Navigation }) {
-  const [newDrink, setNewDrink] = useState({
+import { useDispatch } from "react-redux";
+import { postCategory } from "../actions/post";
+export default function AddCategory({ Navigation }) {
+  const [newCategory, setNewCategory] = useState({
     name: "",
-    price: "",
-    categoryId: "",
-    description: "",
-    imgUrl: "",
-    authorId: 1,
   });
 
-  const submitNewDrink = (drink) => {
-    async function postData(data = { drink }) {
-      const response = await fetch("http://127.0.0.1:3000/drinks", {
-        method: "POST",
-        body: JSON.stringify(data.drink),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
-      const responseJson = await response.json();
-      return responseJson;
-    }
-    Navigation("/");
-    postData();
+  const dispatch = useDispatch();
+  const submitNewCategory = (category) => {
+    dispatch(postCategory(newCategory));
+    Navigation("/categories");
   };
   return (
     <div>
       <ReusableForm
-        action={submitNewDrink}
-        drink={newDrink}
-        setDrink={setNewDrink}
-        actionName="Add Drink"
+        action={submitNewCategory}
+        data={newCategory}
+        setData={setNewCategory}
+        actionName="Add Category"
+        type="category"
       />
     </div>
   );

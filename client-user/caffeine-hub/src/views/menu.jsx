@@ -1,25 +1,17 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchDrinks } from "../actions";
 import Card from "../components/card";
 export default function Menu({ navigate }) {
-  const [drinks, setDrinks] = useState([]);
+  const drinks = useSelector((state) => state.drinks);
+  const dispatch = useDispatch();
+
   function showDetail(id) {
     navigate(`/drinks/${id}`);
   }
 
   useEffect(() => {
-    async function fetchData() {
-      try {
-        const response = await fetch("http://localhost:3000/drinks");
-        if (!response.ok) {
-          throw new { name: "failed" }();
-        }
-        const fetchedDrinks = await response.json();
-        setDrinks(fetchedDrinks);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    fetchData();
+    dispatch(fetchDrinks());
   }, []);
 
   const listDrinks = drinks.map((drink) => (

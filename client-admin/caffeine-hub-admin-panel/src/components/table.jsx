@@ -1,11 +1,11 @@
 import TableItem from "./tableItems";
-export default function Table({ type, items, deleteDrink, showUpdateForm }) {
+export default function Table({ type, items, deleteData, showUpdateForm }) {
   const listItems = items.map((el) => (
     <TableItem
       item={el}
       key={el.id}
       updateForm={showUpdateForm}
-      deleteAction={deleteDrink}
+      deleteAction={deleteData}
       type={type}
     />
   ));
@@ -23,6 +23,9 @@ export default function Table({ type, items, deleteDrink, showUpdateForm }) {
               </th>
               <th scope="col" className="px-6 py-3">
                 Category
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Ingredients
               </th>
               <th scope="col" className="px-6 py-3">
                 Price
@@ -48,7 +51,7 @@ export default function Table({ type, items, deleteDrink, showUpdateForm }) {
                 Name
               </th>
               <th scope="col" className="px-6 py-3">
-                Edit
+                Delete
               </th>
             </tr>
           </thead>

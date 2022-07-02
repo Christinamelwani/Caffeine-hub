@@ -1,17 +1,14 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { useParams, Link } from "react-router-dom";
-
+import { fetchActiveDrink } from "../actions";
 export default function Detail({ setDetailView }) {
-  const [drink, setDrink] = useState({});
+  const activeDrink = useSelector((state) => state.activeDrink);
+  const dispatch = useDispatch();
   const { id } = useParams();
 
   useEffect(() => {
-    async function fetchDetail() {
-      const response = await fetch(`http://localhost:3000/drinks/${id}`);
-      const fetchedDrink = await response.json();
-      setDrink(fetchedDrink);
-    }
-    fetchDetail();
+    dispatch(fetchActiveDrink(id));
   }, [id]);
 
   return (
@@ -29,13 +26,13 @@ export default function Detail({ setDetailView }) {
       </div>
 
       <img
-        name={drink.id}
+        name={activeDrink.id}
         className="cursor-pointer  w-[200px] h-[200px]"
-        src={drink.imgUrl}
+        src={activeDrink.imgUrl}
       ></img>
-      <h1 className="text-xl">{drink.name}</h1>
-      <h2>Harga: Rp.{drink.price}</h2>
-      <h2>{drink.description}</h2>
+      <h1 className="text-xl">{activeDrink.name}</h1>
+      <h2>Harga: Rp.{activeDrink.price}</h2>
+      <h2>{activeDrink.description}</h2>
     </div>
   );
 }

@@ -1,55 +1,36 @@
 import ReusableForm from "../components/form";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-
+import { fetchCategories, fetchDrink } from "../actions/fetch";
+import { useDispatch, useSelector } from "react-redux";
+import { updateDrinks } from "../actions/put";
 export default function UpdateDrink({ Navigation }) {
   const { id } = useParams();
-
+  const dispatch = useDispatch();
   const [fetchedDrink, setFetchedDrink] = useState({
     name: "",
     price: "",
-    categoryId: 1,
+    categoryId: "",
     description: "",
     imgUrl: "",
     authorId: 1,
   });
+  // const drink = useSelector((state) => state.drink.drink);
 
-  useEffect(() => {
-    async function getDrink() {
-      try {
-        const results = await fetch(`http://localhost:3000/drinks/${id}`);
-        const fetchedDrink = await results.json();
-        setFetchedDrink(fetchedDrink);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getDrink();
-  }, []);
+  useEffect(() => {}, []);
 
   const updateDrink = (drink) => {
-    async function updateData(data = { drink }) {
-      const response = await fetch(`http://127.0.0.1:3000/drinks/${id}`, {
-        method: "PUT",
-        body: JSON.stringify(data.drink),
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
-      const responseJson = await response.json();
-      return responseJson;
-    }
-    updateData();
+    dispatch(updateDrinks(id, drink));
     Navigation("/");
   };
   return (
     <div>
       <ReusableForm
         action={updateDrink}
-        drink={fetchedDrink}
-        setDrink={setFetchedDrink}
+        data={fetchedDrink}
+        setData={setFetchedDrink}
         actionName="Update Drink"
+        type="drink"
       />
     </div>
   );
