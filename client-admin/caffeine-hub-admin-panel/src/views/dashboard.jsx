@@ -1,33 +1,20 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchDrinks } from "../actions";
+import { deleteDrinks } from "../actions/delete";
+import { fetchDrinks } from "../actions/fetch";
 import Table from "../components/table";
 export default function Dashboard({ Navigation }) {
   const dispatch = useDispatch();
-  const drinks = useSelector((state) => state.drinks);
-  const [justDeleted, setJustDeleted] = useState(false);
+  const drinks = useSelector((state) => state.drink.drinks);
   const getData = () => {
     dispatch(fetchDrinks());
   };
 
-  useEffect(getData, [justDeleted]);
+  useEffect(getData, []);
 
   const deleteDrink = (id) => {
-    async function deleteData(drink = { id }) {
-      const response = await fetch(`http://127.0.0.1:3000/drinks/${drink.id}`, {
-        method: "DELETE",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
-      const responseJson = await response.json();
-      return responseJson;
-    }
-    deleteData();
-    getData();
-    setJustDeleted(true);
+    dispatch(deleteDrinks(id));
   };
 
   const showUpdateForm = (id) => {
@@ -47,7 +34,7 @@ export default function Dashboard({ Navigation }) {
       <Table
         type="drinks"
         items={drinks}
-        deleteDrink={deleteDrink}
+        deleteData={deleteDrink}
         showUpdateForm={showUpdateForm}
       />
     </div>

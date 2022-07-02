@@ -1,7 +1,8 @@
 import "./App.css";
 import Sidebar from "./components/sidebar";
 import Dashboard from "./views/dashboard";
-import Add from "./views/addDrink";
+import AddDrink from "./views/addDrink";
+import AddCategory from "./views/addCategories";
 import Update from "./views/updateDrink";
 import Login from "./views/login";
 import Categories from "./views/categories";
@@ -12,7 +13,7 @@ import { useSelector } from "react-redux";
 
 function App() {
   const Navigation = useNavigate();
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
   return (
     <div className="App flex flex-row">
       <Sidebar />
@@ -35,7 +36,7 @@ function App() {
             path="/add"
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <Add Navigation={Navigation} />
+                <AddDrink Navigation={Navigation} />
               </ProtectedRoute>
             }
           ></Route>
@@ -59,7 +60,7 @@ function App() {
             path="/categories/add"
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
-                <Add Navigation={Navigation} />
+                <AddCategory Navigation={Navigation} />
               </ProtectedRoute>
             }
           ></Route>

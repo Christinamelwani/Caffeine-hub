@@ -1,45 +1,22 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchCategories } from "../actions/fetch";
 import Table from "../components/table";
+import { deleteCategories } from "../actions/delete";
 export default function Categories({ Navigation }) {
-  const [categories, setCategories] = useState([]);
-  const [justDeleted, setJustDeleted] = useState(false);
+  const categories = useSelector((state) => state.category.categories);
+  const dispatch = useDispatch();
+
   const getData = () => {
-    async function getCategories() {
-      try {
-        const results = await fetch("http://localhost:3000/categories");
-        const fetchedCategories = await results.json();
-        setCategories(fetchedCategories);
-        setJustDeleted(false);
-      } catch (err) {
-        console.log(err);
-      }
-    }
-    getCategories();
+    dispatch(fetchCategories());
   };
 
-  useEffect(getData, [justDeleted]);
+  function deleteData(id) {
+    dispatch(deleteCategories(id));
+  }
 
-  const deleteDrink = (id) => {
-    async function deleteData(drink = { id }) {
-      const response = await fetch(`http://127.0.0.1:3000/drinks/${drink.id}`, {
-        method: "DELETE",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json",
-        },
-      });
-      const responseJson = await response.json();
-      return responseJson;
-    }
-    deleteData();
-    getData();
-    setJustDeleted(true);
-  };
-
-  const showUpdateForm = (id) => {
-    Navigation(`/edit/${id}`);
-  };
+  useEffect(getData, []);
 
   return (
     <div className="ml-4 pt-4 flex h-full flex-col grow">
@@ -54,8 +31,8 @@ export default function Categories({ Navigation }) {
       <Table
         type="categories"
         items={categories}
-        deleteDrink={deleteDrink}
-        showUpdateForm={showUpdateForm}
+        deleteData={deleteData}
+        showUpdateForm={null}
       />
     </div>
   );
