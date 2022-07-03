@@ -1,0 +1,39 @@
+{
+  "drinks": [
+    {
+      "name": "wkwkwk",
+      "price": "",
+      "categoryId": "",
+      "description": "",
+      "imgUrl": "",
+      "authorId": 1,
+      "id": 1
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "espresso-based"
+    },
+    {
+      "name": "test",
+      "id": 3
+    },
+    {
+      "name": "hmm",
+      "id": 4
+    }
+  ],
+  "ingredients": [
+    {
+      "id": 1,
+      "itemId": 1,
+      "name": "espresso"
+    },
+    {
+      "id": 2,
+      "itemId": 1,
+      "name": "milk"
+    }
+  ]
+}
