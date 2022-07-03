@@ -23,13 +23,13 @@ module.exports = {
       AuthorId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "User",
+          model: "Users",
         },
       },
       CategoryId: {
         type: Sequelize.INTEGER,
         references: {
-          model: "Category",
+          model: "Categories",
         },
       },
       createdAt: {

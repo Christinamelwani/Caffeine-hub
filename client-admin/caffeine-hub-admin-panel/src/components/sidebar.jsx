@@ -24,9 +24,11 @@ export default function Sidebar() {
             Categories
           </div>
         </Link>
-        <div className="py-2  text-lg hover:bg-neutral-800 cursor-pointer">
-          Register Admin
-        </div>
+        <Link to="/register">
+          <div className="py-2  text-lg hover:bg-neutral-800 cursor-pointer">
+            Register Admin
+          </div>
+        </Link>
         <div
           onClick={logout}
           className="py-2  text-lg hover:bg-neutral-800 cursor-pointer"

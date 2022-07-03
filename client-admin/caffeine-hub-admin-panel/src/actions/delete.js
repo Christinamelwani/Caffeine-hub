@@ -26,7 +26,12 @@ async function deleteData(id, url, type, dispatch) {
 
 export const deleteDrinks = (id) => {
   return (dispatch) => {
-    deleteData(id, "http://localhost:3000/drinks", DRINKS_FETCH, dispatch);
+    deleteData(
+      id,
+      "https://caffeine-hub-server.herokuapp.com/drinks",
+      DRINKS_FETCH,
+      dispatch
+    );
   };
 };
 
@@ -34,7 +39,7 @@ export const deleteCategories = (id) => {
   return (dispatch) => {
     deleteData(
       id,
-      "http://localhost:3000/categories",
+      "https://caffeine-hub-server.herokuapp.com/categories",
       CATEGORIES_FETCH,
       dispatch
     );

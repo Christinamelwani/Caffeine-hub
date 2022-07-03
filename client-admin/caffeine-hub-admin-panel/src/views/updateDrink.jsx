@@ -17,7 +17,9 @@ export default function UpdateDrink({ Navigation }) {
   });
   // const drink = useSelector((state) => state.drink.drink);
 
-  useEffect(() => {}, []);
+  useEffect(() => {
+    dispatch(fetchCategories());
+  }, []);
 
   const updateDrink = (drink) => {
     dispatch(updateDrinks(id, drink));
@@ -31,6 +33,7 @@ export default function UpdateDrink({ Navigation }) {
         setData={setFetchedDrink}
         actionName="Update Drink"
         type="drink"
+        update={true}
       />
     </div>
   );

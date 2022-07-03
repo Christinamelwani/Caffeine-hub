@@ -31,7 +31,7 @@ export const postDrink = (newDrink, Navigation) => {
   return (dispatch) => {
     postData(
       newDrink,
-      "http://localhost:3000/drinks",
+      "https://caffeine-hub-server.herokuapp.com/drinks",
       DRINKS_FETCH,
       dispatch,
       Navigation,
@@ -44,7 +44,7 @@ export const postCategory = (newCategory, Navigation) => {
   return (dispatch) => {
     postData(
       newCategory,
-      "http://localhost:3000/categories",
+      "https://caffeine-hub-server.herokuapp.com/categories",
       CATEGORIES_FETCH,
       dispatch,
       Navigation,

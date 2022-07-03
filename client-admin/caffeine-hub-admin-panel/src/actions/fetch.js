@@ -26,14 +26,18 @@ export async function fetchData(url, type, dispatch) {
 
 export const fetchDrinks = () => {
   return (dispatch) => {
-    fetchData("http://localhost:3000/drinks", DRINKS_FETCH, dispatch);
+    fetchData(
+      "https://caffeine-hub-server.herokuapp.com/drinks",
+      DRINKS_FETCH,
+      dispatch
+    );
   };
 };
 
 export const fetchDrink = (id) => {
   return (dispatch) => {
     fetchData(
-      `http://localhost:3000/drinks/${id}`,
+      `https://caffeine-hub-server.herokuapp.com/drinks/${id}`,
       DRINK_DETAIL_FETCH,
       dispatch
     );
@@ -42,12 +46,20 @@ export const fetchDrink = (id) => {
 
 export const fetchCategories = () => {
   return (dispatch) => {
-    fetchData("http://localhost:3000/categories", CATEGORIES_FETCH, dispatch);
+    fetchData(
+      "https://caffeine-hub-server.herokuapp.com/categories",
+      CATEGORIES_FETCH,
+      dispatch
+    );
   };
 };
 
 export const fetchIngredients = (id) => {
   return (dispatch) => {
-    fetchData("http://localhost:3000/categories", CATEGORIES_FETCH, dispatch);
+    fetchData(
+      "https://caffeine-hub-server.herokuapp.com/categories",
+      CATEGORIES_FETCH,
+      dispatch
+    );
   };
 };

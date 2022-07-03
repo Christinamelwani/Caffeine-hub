@@ -6,12 +6,11 @@ import AddCategory from "./views/addCategories";
 import Update from "./views/updateDrink";
 import Login from "./views/login";
 import Categories from "./views/categories";
+import RegisterAdmin from "./views/registerAdmin";
 import ProtectedRoute from "./views/protected";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { useEffect } from "react";
-import { IS_LOGGED_IN_SET_TRUE } from "./actions/actionTypes";
 
 function App() {
   const Navigation = useNavigate();
@@ -65,6 +64,14 @@ function App() {
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <AddCategory Navigation={Navigation} />
+              </ProtectedRoute>
+            }
+          ></Route>
+          <Route
+            path="/register"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <RegisterAdmin Navigation={Navigation} />
               </ProtectedRoute>
             }
           ></Route>
