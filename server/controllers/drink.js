@@ -11,6 +11,23 @@ class drinkController {
       next(err);
     }
   }
+
+  static async getDrink(req, res, next) {
+    const { id } = req.params;
+    try {
+      const drink = await Drink.findOne({
+        include: [{ model: User, as: "Author" }, Category, Ingredient],
+        where: { id },
+      });
+      if (!drink) {
+        throw { name: "not found" };
+      }
+      res.status(200).json(drink);
+    } catch (err) {
+      next(err);
+    }
+  }
+
   static async postDrink(req, res, next) {
     const t = await sequelize.transaction();
     try {
@@ -45,6 +62,24 @@ class drinkController {
       const { id } = req.params;
       const destroyedDrink = await Drink.destroy({ where: { id } });
       res.status(200).json(destroyedDrink);
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  static async updateDrink(req, res, next) {
+    const { id } = req.params;
+    try {
+      const { name, price, categoryId, description, imgUrl } = req.body;
+      const updatedDrink = {
+        name,
+        price,
+        CategoryId: categoryId,
+        description,
+        imgUrl,
+      };
+      const drink = await Drink.update(updatedDrink, { where: { id } });
+      res.status(200).json(drink);
     } catch (err) {
       next(err);
     }
