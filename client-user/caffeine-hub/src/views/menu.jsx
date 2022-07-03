@@ -17,10 +17,13 @@ export default function Menu({ navigate }) {
   const listDrinks = drinks.map((drink) => (
     <Card showDetail={showDetail} drink={drink} key={drink.id}></Card>
   ));
-
-  return (
-    <div className="text-yellow-900 mt-4 grid grid-cols-4 gap-4">
-      {listDrinks}
-    </div>
-  );
+  if (listDrinks) {
+    return (
+      <div className="text-yellow-900 mt-4 grid grid-cols-4 gap-4">
+        {listDrinks}
+      </div>
+    );
+  } else {
+    return "loading";
+  }
 }

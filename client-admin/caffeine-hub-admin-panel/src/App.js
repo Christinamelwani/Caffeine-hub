@@ -6,14 +6,17 @@ import AddCategory from "./views/addCategories";
 import Update from "./views/updateDrink";
 import Login from "./views/login";
 import Categories from "./views/categories";
+import RegisterAdmin from "./views/registerAdmin";
 import ProtectedRoute from "./views/protected";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 function App() {
   const Navigation = useNavigate();
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
   return (
     <div className="App flex flex-row">
       <Sidebar />
@@ -61,6 +64,14 @@ function App() {
             element={
               <ProtectedRoute isLoggedIn={isLoggedIn}>
                 <AddCategory Navigation={Navigation} />
+              </ProtectedRoute>
+            }
+          ></Route>
+          <Route
+            path="/register"
+            element={
+              <ProtectedRoute isLoggedIn={isLoggedIn}>
+                <RegisterAdmin Navigation={Navigation} />
               </ProtectedRoute>
             }
           ></Route>

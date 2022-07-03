@@ -11,6 +11,7 @@ export default function AddDrink({ Navigation }) {
     description: "",
     imgUrl: "",
     authorId: 1,
+    ingredients: "",
   });
   useEffect(() => {
     dispatch(fetchCategories());
@@ -19,8 +20,10 @@ export default function AddDrink({ Navigation }) {
   const dispatch = useDispatch();
 
   const submitNewDrink = (drink) => {
-    dispatch(postDrink(drink));
-    Navigation("/");
+    if (drink.ingredients) {
+      drink.ingredients = drink.ingredients.split("\n");
+    }
+    dispatch(postDrink(drink, Navigation));
   };
   return (
     <div>

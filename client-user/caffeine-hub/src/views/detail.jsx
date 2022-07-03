@@ -6,10 +6,20 @@ export default function Detail({ setDetailView }) {
   const activeDrink = useSelector((state) => state.activeDrink);
   const dispatch = useDispatch();
   const { id } = useParams();
+  let filler = "";
 
   useEffect(() => {
     dispatch(fetchActiveDrink(id));
   }, [id]);
+
+  const getIngredients = () => {
+    if (activeDrink.Ingredients) {
+      filler = activeDrink.Ingredients.map((el) => {
+        return <li key={el.id}>{el.name}</li>;
+      });
+    }
+    return filler;
+  };
 
   return (
     <div className="flex flex-col items-center">
@@ -33,6 +43,8 @@ export default function Detail({ setDetailView }) {
       <h1 className="text-xl">{activeDrink.name}</h1>
       <h2>Harga: Rp.{activeDrink.price}</h2>
       <h2>{activeDrink.description}</h2>
+      <h2>Ingredients:</h2>
+      <ul>{getIngredients()}</ul>
     </div>
   );
 }
