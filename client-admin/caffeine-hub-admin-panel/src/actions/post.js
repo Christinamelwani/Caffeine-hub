@@ -1,6 +1,7 @@
 import { CATEGORIES_FETCH, DRINKS_FETCH } from "./actionTypes";
 import { fetchData } from "./fetch";
-async function postData(newData, url, type, dispatch) {
+import swal from "sweetalert";
+async function postData(newData, url, type, dispatch, Navigation, nextUrl) {
   try {
     const response = await fetch(url, {
       method: "POST",
@@ -8,30 +9,46 @@ async function postData(newData, url, type, dispatch) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        access_token: localStorage.getItem("access_token"),
       },
     });
     if (!response.ok) {
-      throw { name: "Failed to post" };
+      const error = await response.json();
+      throw { message: error.message, detail: error.detail };
     }
     fetchData(url, type, dispatch);
+    Navigation(nextUrl);
   } catch (err) {
-    console.log(err);
+    swal({
+      title: "Error!",
+      text: err.message + "\n" + err.detail,
+      icon: "error",
+    });
   }
 }
 
-export const postDrink = (newDrink) => {
+export const postDrink = (newDrink, Navigation) => {
   return (dispatch) => {
-    postData(newDrink, "http://localhost:3000/drinks", DRINKS_FETCH, dispatch);
+    postData(
+      newDrink,
+      "http://localhost:3000/drinks",
+      DRINKS_FETCH,
+      dispatch,
+      Navigation,
+      "/"
+    );
   };
 };
 
-export const postCategory = (newCategory) => {
+export const postCategory = (newCategory, Navigation) => {
   return (dispatch) => {
     postData(
       newCategory,
       "http://localhost:3000/categories",
       CATEGORIES_FETCH,
-      dispatch
+      dispatch,
+      Navigation,
+      "/categories"
     );
   };
 };

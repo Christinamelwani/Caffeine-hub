@@ -1,7 +1,6 @@
 export default function TableItem({ item, type, deleteAction, updateForm }) {
   const handleDelete = (e) => {
     const id = e.target.name;
-    console.log(id);
     deleteAction(id);
   };
   const handleUpdate = (id) => {
@@ -29,17 +28,22 @@ export default function TableItem({ item, type, deleteAction, updateForm }) {
       <tr className="border-b items-center odd:bg-white even:bg-purple-50 odd:dark:bg-purple-800 even:dark:bg-purple-700">
         <td className="px-6 py-4 ">{item.id}</td>
         <td className="px-6 py-4">{item.name}</td>
-        <td className="px-6 py-4">{item.categoryId}</td>
+        <td className="px-6 py-4">{item.Category.name}</td>
         <td className="px-6 py-4">
-          <button
+          {/* <button
             onClick={() => {}}
             className="bg-blue-500 text-white rounded px-4 py-2"
           >
             View
-          </button>
+          </button> */}
+          <ul>
+            {item.Ingredients.map((el) => {
+              return <li key={el.id}>{el.name}</li>;
+            })}
+          </ul>
         </td>
         <td className="px-6 py-4">{item.price}</td>
-        <td className="px-6 py-4">{item.authorId}</td>
+        <td className="px-6 py-4">{item.Author.email}</td>
         <td className="px-6 py-4">
           <img src={item.imgUrl} className="h-[100px] w-[100px]" alt="" />
         </td>

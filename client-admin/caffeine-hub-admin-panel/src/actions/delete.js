@@ -1,5 +1,6 @@
 import { CATEGORIES_FETCH, DRINKS_FETCH } from "./actionTypes";
 import { fetchData } from "./fetch";
+import swal from "sweetalert";
 async function deleteData(id, url, type, dispatch) {
   try {
     const response = await fetch(`${url}/${id}`, {
@@ -7,6 +8,7 @@ async function deleteData(id, url, type, dispatch) {
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
+        access_token: localStorage.getItem("access_token"),
       },
     });
     if (!response.ok) {
@@ -14,7 +16,11 @@ async function deleteData(id, url, type, dispatch) {
     }
     fetchData(url, type, dispatch);
   } catch (err) {
-    console.log(err);
+    swal({
+      title: "Error!",
+      text: err.message,
+      icon: "error",
+    });
   }
 }
 

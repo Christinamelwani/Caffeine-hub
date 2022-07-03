@@ -1,5 +1,4 @@
 const { User } = require("../models");
-const { Op } = require("sequelize");
 const { verifyPassword } = require("../helpers/bcrypt");
 const { generateJWToken } = require("../helpers/jwt");
 
@@ -46,14 +45,14 @@ class userController {
       });
 
       if (!userFound) {
-        throw { name: "Invalid username/email/phone number or password" };
+        throw { name: "Invalid email or password" };
       }
 
       const hash = userFound.password;
 
       const isPasswordCorrect = verifyPassword(password, hash);
       if (!isPasswordCorrect) {
-        throw { name: "Invalid username/email/phone number or password" };
+        throw { name: "Invalid email or password" };
       }
 
       const access_token = generateJWToken({

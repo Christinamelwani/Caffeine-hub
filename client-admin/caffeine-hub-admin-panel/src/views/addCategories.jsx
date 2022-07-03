@@ -9,8 +9,7 @@ export default function AddCategory({ Navigation }) {
 
   const dispatch = useDispatch();
   const submitNewCategory = (category) => {
-    dispatch(postCategory(newCategory));
-    Navigation("/categories");
+    dispatch(postCategory(newCategory, Navigation));
   };
   return (
     <div>

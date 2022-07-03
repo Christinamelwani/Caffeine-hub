@@ -9,11 +9,15 @@ import Categories from "./views/categories";
 import ProtectedRoute from "./views/protected";
 
 import { Routes, Route, useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { useEffect } from "react";
+import { IS_LOGGED_IN_SET_TRUE } from "./actions/actionTypes";
 
 function App() {
   const Navigation = useNavigate();
+  const dispatch = useDispatch();
   const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+
   return (
     <div className="App flex flex-row">
       <Sidebar />
