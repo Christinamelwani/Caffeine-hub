@@ -18,14 +18,18 @@ async function fetchData(url, type, dispatch) {
 
 export const fetchDrinks = () => {
   return (dispatch) => {
-    fetchData("http://localhost:3000/drinks", DRINKS_FETCH_SUCCESS, dispatch);
+    fetchData(
+      "https://caffeine-hub-server.herokuapp.com/drinks",
+      DRINKS_FETCH_SUCCESS,
+      dispatch
+    );
   };
 };
 
 export const fetchActiveDrink = (id) => {
   return (dispatch) => {
     fetchData(
-      `http://localhost:3000/drinks/${id}`,
+      `https://caffeine-hub-server.herokuapp.com/drinks/${id}`,
       ACTIVE_DRINK_FETCH_SUCCESS,
       dispatch
     );
