@@ -34,11 +34,11 @@ export default function Detail({ setDetailView }) {
       <h2>Harga: Rp.{activeDrink.price}</h2>
       <h2>{activeDrink.description}</h2>
       <h2>Ingredients:</h2>
-      {/* <ul>
+      <ul>
         {activeDrink.Ingredients.map((el) => {
           return <li key={el.id}>{el.name}</li>;
         })}
-      </ul> */}
+      </ul>
     </div>
   );
 }
