@@ -28,7 +28,7 @@ export const deleteDrinks = (id) => {
   return (dispatch) => {
     deleteData(
       id,
-      "https://caffeine-hub-server.herokuapp.com/drinks",
+      "https://caffeine-hub-v1.herokuapp.com/drinks",
       DRINKS_FETCH,
       dispatch
     );
@@ -39,7 +39,7 @@ export const deleteCategories = (id) => {
   return (dispatch) => {
     deleteData(
       id,
-      "https://caffeine-hub-server.herokuapp.com/categories",
+      "https://caffeine-hub-v1.herokuapp.com/categories",
       CATEGORIES_FETCH,
       dispatch
     );

@@ -27,7 +27,7 @@ export async function fetchData(url, type, dispatch) {
 export const fetchDrinks = () => {
   return (dispatch) => {
     fetchData(
-      "https://caffeine-hub-server.herokuapp.com/drinks",
+      "https://caffeine-hub-v1.herokuapp.com/drinks",
       DRINKS_FETCH,
       dispatch
     );
@@ -37,7 +37,7 @@ export const fetchDrinks = () => {
 export const fetchDrink = (id) => {
   return (dispatch) => {
     fetchData(
-      `https://caffeine-hub-server.herokuapp.com/drinks/${id}`,
+      `https://caffeine-hub-v1.herokuapp.com/drinks/${id}`,
       DRINK_DETAIL_FETCH,
       dispatch
     );
@@ -47,7 +47,7 @@ export const fetchDrink = (id) => {
 export const fetchCategories = () => {
   return (dispatch) => {
     fetchData(
-      "https://caffeine-hub-server.herokuapp.com/categories",
+      "https://caffeine-hub-v1.herokuapp.com/categories",
       CATEGORIES_FETCH,
       dispatch
     );
@@ -57,7 +57,7 @@ export const fetchCategories = () => {
 export const fetchIngredients = (id) => {
   return (dispatch) => {
     fetchData(
-      "https://caffeine-hub-server.herokuapp.com/categories",
+      "https://caffeine-hub-v1.herokuapp.com/categories",
       CATEGORIES_FETCH,
       dispatch
     );

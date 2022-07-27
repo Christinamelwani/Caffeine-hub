@@ -31,7 +31,7 @@ export const updateDrinks = (id, drink) => {
     updateData(
       id,
       drink,
-      "https://caffeine-hub-server.herokuapp.com/drinks",
+      "https://caffeine-hub-v1.herokuapp.com/drinks",
       DRINKS_FETCH,
       dispatch
     );
