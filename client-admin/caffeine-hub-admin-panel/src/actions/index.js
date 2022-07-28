@@ -1,19 +1,16 @@
-import { IS_LOGGED_IN_SET_TRUE } from "./actionTypes";
+import { IS_LOGGED_IN_SET_TRUE, baseUrl } from "./actionTypes";
 import swal from "sweetalert";
 export function login(email, password, Navigation) {
   return async (dispatch) => {
     try {
-      const response = await fetch(
-        "https://caffeine-hub-server.herokuapp.com/users/login",
-        {
-          method: "POST",
-          body: JSON.stringify({ email, password }),
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`${baseUrl}/users/login`, {
+        method: "POST",
+        body: JSON.stringify({ email, password }),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
       if (!response.ok) {
         const error = await response.json();
         throw { message: error.message };
@@ -35,17 +32,14 @@ export function login(email, password, Navigation) {
 export function register(user, Navigation) {
   return async (dispatch) => {
     try {
-      const response = await fetch(
-        "https://caffeine-hub-server.herokuapp.com/users/register",
-        {
-          method: "POST",
-          body: JSON.stringify(user),
-          headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json",
-          },
-        }
-      );
+      const response = await fetch(`${baseUrl}/users/register`, {
+        method: "POST",
+        body: JSON.stringify(user),
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+      });
       if (!response.ok) {
         const error = await response.json();
         throw { message: error.message, detail: error.detail };

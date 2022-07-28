@@ -1,4 +1,4 @@
-import { CATEGORIES_FETCH, DRINKS_FETCH } from "./actionTypes";
+import { CATEGORIES_FETCH, DRINKS_FETCH, baseUrl } from "./actionTypes";
 import { fetchData } from "./fetch";
 import swal from "sweetalert";
 async function updateData(id, data, url, type, dispatch) {
@@ -28,12 +28,6 @@ async function updateData(id, data, url, type, dispatch) {
 
 export const updateDrinks = (id, drink) => {
   return (dispatch) => {
-    updateData(
-      id,
-      drink,
-      "https://caffeine-hub-v1.herokuapp.com/drinks",
-      DRINKS_FETCH,
-      dispatch
-    );
+    updateData(id, drink, `${baseUrl}/drinks`, DRINKS_FETCH, dispatch);
   };
 };

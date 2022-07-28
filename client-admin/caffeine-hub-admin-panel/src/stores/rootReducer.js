@@ -2,7 +2,7 @@ import { combineReducers } from "redux";
 import userReducer from "./userReducer";
 import drinkReducer from "./drinkReducer";
 import categoryReducer from "./categoryReducer";
-import ingredientReducer from "./ingredientReducer";
+import ingredientReducer from "./IngredientReducer";
 
 const rootReducer = combineReducers({
   drink: drinkReducer,

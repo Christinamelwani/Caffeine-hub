@@ -11,7 +11,10 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Drink.belongsTo(models.Category);
       Drink.belongsTo(models.User, { as: "Author", foreignKey: "AuthorId" });
-      Drink.hasMany(models.Ingredient, { foreignKey: "drinkId" });
+      Drink.hasMany(models.Ingredient, {
+        foreignKey: "drinkId",
+        onDelete: "cascade",
+      });
     }
   }
   Drink.init(

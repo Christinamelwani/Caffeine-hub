@@ -1,4 +1,4 @@
-import { CATEGORIES_FETCH, DRINKS_FETCH } from "./actionTypes";
+import { CATEGORIES_FETCH, DRINKS_FETCH, baseUrl } from "./actionTypes";
 import { fetchData } from "./fetch";
 import swal from "sweetalert";
 async function postData(newData, url, type, dispatch, Navigation, nextUrl) {
@@ -31,7 +31,7 @@ export const postDrink = (newDrink, Navigation) => {
   return (dispatch) => {
     postData(
       newDrink,
-      "https://caffeine-hub-v1.herokuapp.com/drinks",
+      `${baseUrl}/drinks`,
       DRINKS_FETCH,
       dispatch,
       Navigation,
@@ -44,7 +44,7 @@ export const postCategory = (newCategory, Navigation) => {
   return (dispatch) => {
     postData(
       newCategory,
-      "https://caffeine-hub-v1.herokuapp.com/categories",
+      `${baseUrl}/categories`,
       CATEGORIES_FETCH,
       dispatch,
       Navigation,

@@ -1,4 +1,4 @@
-import { CATEGORIES_FETCH, DRINKS_FETCH } from "./actionTypes";
+import { CATEGORIES_FETCH, DRINKS_FETCH, baseUrl } from "./actionTypes";
 import { fetchData } from "./fetch";
 import swal from "sweetalert";
 async function deleteData(id, url, type, dispatch) {
@@ -26,22 +26,12 @@ async function deleteData(id, url, type, dispatch) {
 
 export const deleteDrinks = (id) => {
   return (dispatch) => {
-    deleteData(
-      id,
-      "https://caffeine-hub-v1.herokuapp.com/drinks",
-      DRINKS_FETCH,
-      dispatch
-    );
+    deleteData(id, `${baseUrl}/drinks`, DRINKS_FETCH, dispatch);
   };
 };
 
 export const deleteCategories = (id) => {
   return (dispatch) => {
-    deleteData(
-      id,
-      "https://caffeine-hub-v1.herokuapp.com/categories",
-      CATEGORIES_FETCH,
-      dispatch
-    );
+    deleteData(id, `${baseUrl}/categories`, CATEGORIES_FETCH, dispatch);
   };
 };
