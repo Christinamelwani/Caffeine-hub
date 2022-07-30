@@ -1,0 +1,11 @@
+[
+  {
+    "name": "Americano",
+    "price": 20000,
+    "CategoryId": 1,
+    "description": "A classic drink for the colder monthes",
+    "imgUrl": "https://www.nescafe.com/id/sites/default/files/Kopi-Hitam-Americano-dan-Espresso%2C-Apa-Bedanya%2C-Ya.jpg",
+    "AuthorId": 1,
+    "ingredients": ["Espresso", "Water"]
+  }
+]
