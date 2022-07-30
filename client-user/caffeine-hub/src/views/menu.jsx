@@ -19,7 +19,7 @@ export default function Menu({ navigate }) {
   ));
   if (listDrinks) {
     return (
-      <div className="text-yellow-900 mt-4 grid grid-cols-4 gap-4">
+      <div className="h-[100%] pt-4 h-full mt-4 grid grid-cols-4 gap-4">
         {listDrinks}
       </div>
     );

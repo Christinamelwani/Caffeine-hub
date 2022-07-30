@@ -8,7 +8,7 @@ export default function Navigation({}) {
           <h1 className="text-xl text-bold text-yellow-900">Caffeine hub</h1>
         </Link>
       </div>
-      <div className="flex gap-5">
+      {/* <div className="flex gap-5">
         <div className="flex">
           <form className="flex items-center gap-3">
             <input
@@ -38,7 +38,7 @@ export default function Navigation({}) {
             alt=""
           />
         </div>
-      </div>
+      </div> */}
     </nav>
   );
 }

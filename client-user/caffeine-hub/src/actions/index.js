@@ -1,6 +1,7 @@
 import {
   DRINKS_FETCH_SUCCESS,
   ACTIVE_DRINK_FETCH_SUCCESS,
+  baseUrl,
 } from "../actions/actionType";
 
 async function fetchData(url, type, dispatch) {
@@ -18,20 +19,12 @@ async function fetchData(url, type, dispatch) {
 
 export const fetchDrinks = () => {
   return (dispatch) => {
-    fetchData(
-      "https://caffeine-hub-server.herokuapp.com/drinks",
-      DRINKS_FETCH_SUCCESS,
-      dispatch
-    );
+    fetchData(`${baseUrl}/drinks`, DRINKS_FETCH_SUCCESS, dispatch);
   };
 };
 
 export const fetchActiveDrink = (id) => {
   return (dispatch) => {
-    fetchData(
-      `https://caffeine-hub-server.herokuapp.com/drinks/${id}`,
-      ACTIVE_DRINK_FETCH_SUCCESS,
-      dispatch
-    );
+    fetchData(`${baseUrl}/drinks/${id}`, ACTIVE_DRINK_FETCH_SUCCESS, dispatch);
   };
 };

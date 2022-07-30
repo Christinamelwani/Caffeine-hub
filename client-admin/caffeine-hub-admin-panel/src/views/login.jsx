@@ -34,6 +34,21 @@ export default function Login({ Navigation }) {
         className="bg-white w-[80vw] shadow-md rounded px-8 pt-6 pb-8 mb-4 flex flex-col"
       >
         <div className="mb-4">
+          <h1 className="block text-grey-darker text-sm font-bold mb-2">
+            Attention! Enter these credentials to test app-
+          </h1>
+          <h1>
+            <span className="text-grey-darker text-sm font-bold">Email: </span>
+            test@mail.com
+          </h1>
+          <h1>
+            <span className="text-grey-darker text-sm font-bold">
+              Password:{" "}
+            </span>
+            test
+          </h1>
+        </div>
+        <div className="mb-4">
           <label
             className="block text-grey-darker text-sm font-bold mb-2"
             htmlFor="email"

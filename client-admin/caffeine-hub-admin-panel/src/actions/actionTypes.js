@@ -5,7 +5,7 @@ const DRINK_DETAIL_FETCH = "fetch drink detail";
 const CATEGORIES_FETCH = "fetch categories";
 const DRINKS_ADD = "add drinks";
 const INGREDIENTS_FETCH = "fetch ingredients";
-const baseUrl = "http://localhost:3000";
+const baseUrl = "https://caffeine-hub-v1.herokuapp.com";
 module.exports = {
   IS_LOGGED_IN_SET_TRUE,
   DRINKS_FETCH,
