@@ -15,26 +15,34 @@ export default function UpdateDrink({ Navigation }) {
     imgUrl: "",
     authorId: 1,
   });
-  // const drink = useSelector((state) => state.drink.drink);
-
+  const drink = useSelector((state) => state.drink.drink);
   useEffect(() => {
-    dispatch(fetchCategories());
+    try {
+      dispatch(fetchCategories());
+      dispatch(fetchDrink(id));
+    } catch {
+    } finally {
+      setFetchedDrink(drink);
+    }
   }, []);
 
   const updateDrink = (drink) => {
     dispatch(updateDrinks(id, drink));
     Navigation("/");
   };
-  return (
-    <div>
-      <ReusableForm
-        action={updateDrink}
-        data={fetchedDrink}
-        setData={setFetchedDrink}
-        actionName="Update Drink"
-        type="drink"
-        update={true}
-      />
-    </div>
-  );
+
+  if (drink) {
+    return (
+      <div>
+        <ReusableForm
+          action={updateDrink}
+          data={fetchedDrink}
+          setData={setFetchedDrink}
+          actionName="Update Drink"
+          type="drink"
+          update={true}
+        />
+      </div>
+    );
+  }
 }

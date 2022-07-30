@@ -101,20 +101,23 @@ export default function ReusableForm({
             />
           </div>
         </div>
-        <div className="flex flex-row justify-between px-10">
-          <div className="flex justify-between flex-col w-50">
-            <label className="rounded bold" htmlFor="ingredients">
-              Ingredients (write one per line):
-            </label>
-            <textarea
-              name="ingredients"
-              value={data.ingredients}
-              onChange={handleChange}
-              type="number"
-              className="px-4 py-1 display-none border-blue-200 rounded border"
-            />
+        {actionName !== "Update Drink" ? (
+          <div className="flex flex-row justify-between px-10">
+            <div className="flex justify-between flex-col w-50">
+              <label className="rounded bold" htmlFor="ingredients">
+                Ingredients (write one per line):
+              </label>
+              <textarea
+                name="ingredients"
+                value={data.ingredients}
+                onChange={handleChange}
+                type="number"
+                className="px-4 py-1 display-none border-blue-200 rounded border"
+              />
+            </div>
           </div>
-        </div>
+        ) : null}
+
         <input
           className="cursor-pointer self-end mr-8 mt-2 bg-blue-500 text-white px-4 rounded py-2"
           type="submit"
