@@ -12,7 +12,6 @@ class categoryController {
     try {
       const { name } = req.body;
       const createdCategory = await Category.create({ name });
-      console.log(createdCategory);
       res.status(201).json(createdCategory);
     } catch (err) {
       next(err);

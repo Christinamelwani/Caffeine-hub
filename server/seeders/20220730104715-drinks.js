@@ -7,7 +7,11 @@ module.exports = {
     let count = 1;
     drinks.forEach((drink) => {
       drink.ingredients.forEach(async (el) => {
-        await Ingredient.create({ name: el, drinkId: count });
+        await queryInterface.bulkInsert(
+          "Ingredients",
+          [{ name: el, drinkId: count }],
+          {}
+        );
       });
       count++;
       delete drink.ingredients;
