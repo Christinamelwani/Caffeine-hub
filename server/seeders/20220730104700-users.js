@@ -10,6 +10,8 @@ module.exports = {
         email: "test@mail.com",
         password: hashPassword("test"),
         role: "admin",
+        createdAt: new Date(),
+        updatedAt: new Date(),
       },
     ]);
   },

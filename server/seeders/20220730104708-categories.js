@@ -7,15 +7,23 @@ module.exports = {
       [
         {
           name: "espresso-based",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: "tea-based",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: "milk-based",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
         {
           name: "other",
+          createdAt: new Date(),
+          updatedAt: new Date(),
         },
       ],
       {}

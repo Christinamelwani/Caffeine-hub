@@ -11,6 +11,8 @@ module.exports = {
       });
       count++;
       delete drink.ingredients;
+      drink.createdAt = new Date();
+      drink.updatedAt = new Date();
     });
     await queryInterface.bulkInsert("Drinks", drinks, {});
   },
