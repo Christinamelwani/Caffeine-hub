@@ -25,9 +25,9 @@ export default function ReusableForm({
 
   if (type === "drink") {
     return (
-      <form className="pt-6 flex flex-col w-full gap-5" onSubmit={handleSubmit}>
+      <form className="pt-6 flex flex-row w-full gap-5" onSubmit={handleSubmit}>
         <div className="flex flex-row justify-between px-10">
-          <div className="flex justify-between flex-col">
+          <div className="flex justify-between flex-row">
             <label className="bold" htmlFor="name">
               Name:
             </label>
@@ -39,7 +39,7 @@ export default function ReusableForm({
               className="px-4 py-1 display-none border-blue-200 rounded border"
             />
           </div>
-          <div className="flex self-start justify-between flex-col">
+          <div className="flex self-start justify-between flex-row">
             <label className="bold" htmlFor="Category">
               Category:
             </label>
@@ -62,7 +62,7 @@ export default function ReusableForm({
           </div>
         </div>
         <div className="flex flex-row justify-between px-10">
-          <div className="flex justify-between flex-col">
+          <div className="flex justify-between flex-row">
             <label className="bold" htmlFor="price">
               Price:
             </label>
@@ -74,7 +74,7 @@ export default function ReusableForm({
               className="px-4 py-1 display-none border-blue-200 rounded border"
             />
           </div>
-          <div className="ml-3 flex justify-between flex-col">
+          <div className="ml-3 flex justify-between flex-row">
             <label className="bold" htmlFor="Category">
               Image Url:
             </label>
@@ -88,7 +88,7 @@ export default function ReusableForm({
           </div>
         </div>
         <div className="flex flex-row justify-between px-10">
-          <div className="flex justify-between flex-col w-50">
+          <div className="flex justify-between flex-row w-50">
             <label className="rounded bold" htmlFor="description">
               Description:
             </label>
@@ -103,7 +103,7 @@ export default function ReusableForm({
         </div>
         {actionName !== "Update Drink" ? (
           <div className="flex flex-row justify-between px-10">
-            <div className="flex justify-between flex-col w-50">
+            <div className="flex justify-between flex-row w-50">
               <label className="rounded bold" htmlFor="ingredients">
                 Ingredients (write one per line):
               </label>
@@ -128,20 +128,38 @@ export default function ReusableForm({
     );
   } else {
     return (
-      <form className="pt-6 flex flex-col w-full gap-5" onSubmit={handleSubmit}>
+      <form className="pt-6 flex flex-row w-full gap-5" onSubmit={handleSubmit}>
         <div className="flex flex-row justify-between px-10">
-          <div className="flex justify-between flex-col">
-            <label className="bold" htmlFor="name">
-              Name:
-            </label>
-            <input
-              type="text"
-              name="name"
-              onChange={handleChange}
-              value={data.name}
-              className="px-4 py-1 display-none border-blue-200 rounded border"
-            />
-          </div>
+          <label className="bold" htmlFor="name">
+            Name:
+          </label>
+          <input
+            type="text"
+            name="name"
+            onChange={handleChange}
+            value={data.name}
+            className="px-4 py-1 display-none border-blue-200 rounded border"
+          />
+          <label className="bold" htmlFor="name">
+            Name:
+          </label>
+          <input
+            type="text"
+            name="name"
+            onChange={handleChange}
+            value={data.name}
+            className="px-4 py-1 display-none border-blue-200 rounded border"
+          />
+          <label className="bold" htmlFor="name">
+            Name:
+          </label>
+          <input
+            type="text"
+            name="name"
+            onChange={handleChange}
+            value={data.name}
+            className="px-4 py-1 display-none border-blue-200 rounded border"
+          />
         </div>
         <input
           className="cursor-pointer self-end mr-8 mt-2 bg-blue-500 text-white px-4 rounded py-2"
