@@ -5,8 +5,11 @@ import { deleteDrinks } from "../actions/delete";
 import { fetchDrinks } from "../actions/fetch";
 import Table from "../components/table";
 export default function Dashboard({ Navigation }) {
+  const waitingGif = require("../waiting.gif");
   const dispatch = useDispatch();
   const drinks = useSelector((state) => state.drink.drinks);
+  const loading = useSelector((state) => state.drink.loading);
+
   const getData = () => {
     dispatch(fetchDrinks());
   };
@@ -20,6 +23,15 @@ export default function Dashboard({ Navigation }) {
   const showUpdateForm = (id) => {
     Navigation(`/edit/${id}`);
   };
+  if (drinks === [] || loading) {
+    return (
+      <div className="ml-4 pt-4 flex h-full flex-col grow">
+        <div className="flex flex-row justify-between w-[80vw]">
+          <img src={waitingGif} alt="wait until the page loads" />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="ml-4 pt-4 flex h-full flex-col grow">

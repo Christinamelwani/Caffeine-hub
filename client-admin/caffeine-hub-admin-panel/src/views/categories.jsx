@@ -5,7 +5,10 @@ import { fetchCategories } from "../actions/fetch";
 import Table from "../components/table";
 import { deleteCategories } from "../actions/delete";
 export default function Categories({ Navigation }) {
+  const waitingGif = require("../waiting.gif");
   const categories = useSelector((state) => state.category.categories);
+  const loading = useSelector((state) => state.category.loading);
+
   const dispatch = useDispatch();
 
   const getData = () => {
@@ -17,7 +20,15 @@ export default function Categories({ Navigation }) {
   }
 
   useEffect(getData, []);
-
+  if (categories === [] || loading) {
+    return (
+      <div className="ml-4 pt-4 flex h-full flex-col grow">
+        <div className="flex flex-row justify-between w-[80vw]">
+          <img src={waitingGif} alt="wait until the page loads" />
+        </div>
+      </div>
+    );
+  }
   return (
     <div className="ml-4 pt-4 flex h-full flex-col grow">
       <div className="flex flex-row justify-between w-[80vw]">

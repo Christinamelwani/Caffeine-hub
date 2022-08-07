@@ -9,12 +9,13 @@ import {
 
 const activeDrink = {};
 const drinks = [];
-const initialState = { activeDrink, drinks };
+const loading = true;
+const initialState = { activeDrink, drinks, loading };
 
 function mainReducer(state = initialState, action) {
   switch (action.type) {
     case DRINKS_FETCH_SUCCESS:
-      return { ...state, drinks: action.payload };
+      return { ...state, loading: false, drinks: action.payload };
     case ACTIVE_DRINK_FETCH_SUCCESS:
       return { ...state, activeDrink: action.payload };
     default:
